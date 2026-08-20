@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta y Estudios - Suite Médica</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f4f7f6; 
+            display: flex; 
+            justify-content: center; 
+            padding: 40px 20px; 
+            margin: 0; 
+        }
+        .form-container { 
+            background: #ffffff; 
+            padding: 30px 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            width: 100%; 
+            max-width: 500px; 
+        }
+        h2 { 
+            color: #2c3e50; 
+            margin-top: 0; 
+            text-align: center; 
+            margin-bottom: 30px;
+        }
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #34495e; 
+        }
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #bdc3c7; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            box-sizing: border-box; 
+            background-color: #fdfdfd;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #27ae60;
+        }
+        .btn-submit { 
+            width: 100%; 
+            padding: 15px; 
+            background-color: #27ae60; /* Verde para indicar Alta */
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: background 0.3s; 
+            margin-top: 10px;
+        }
+        .btn-submit:hover { 
+            background-color: #2ecc71; 
+        }
+        .btn-back { 
+            display: block; 
+            text-align: center; 
+            margin-top: 20px; 
+            color: #7f8c8d; 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        .btn-back:hover {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Alta Médica y Estudios</h2>
+        
+        <form id="form-alta">
+            <div class="form-group">
+                <label for="dni-alta">DNI del Paciente</label>
+                <input type="number" id="dni-alta" required placeholder="Ej: 35123456">
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre-alta">Nombre Completo</label>
+                <input type="text" id="nombre-alta" required placeholder="Nombre del trabajador">
+            </div>
+            
+            <div class="form-group">
+                <label for="tipo-alta">Condición de Alta</label>
+                <select id="tipo-alta" required>
+                    <option value="">Seleccione condición...</option>
+                    <option value="Alta médica definitiva">Alta médica definitiva</option>
+                    <option value="Alta con tareas pasivas">Alta con tareas pasivas (limitación física)</option>
+                    <option value="Derivación a especialista">Derivación a especialista</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="estudios">Estudios Complementarios Sugeridos</label>
+                <select id="estudios">
+                    <option value="Ninguno">Ninguno</option>
+                    <option value="Radiografía de control">Radiografía de control</option>
+                    <option value="Ecografía de partes blandas">Ecografía de partes blandas</option>
+                    <option value="Laboratorio completo">Laboratorio completo</option>
+                    <option value="Resonancia magnética">Resonancia magnética</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn-submit" id="btn-generar-alta">Generar Alta Inviolable</button>
+            
+            <a href="index.html" class="btn-back">← Volver al menú principal</a>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
