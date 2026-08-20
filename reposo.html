@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emitir Reposo - Suite Médica</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f4f7f6; 
+            display: flex; 
+            justify-content: center; 
+            padding: 40px 20px; 
+            margin: 0; 
+        }
+        .form-container { 
+            background: #ffffff; 
+            padding: 30px 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            width: 100%; 
+            max-width: 500px; 
+        }
+        h2 { 
+            color: #2c3e50; 
+            margin-top: 0; 
+            text-align: center; 
+            margin-bottom: 30px;
+        }
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #34495e; 
+        }
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #bdc3c7; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            box-sizing: border-box; 
+            background-color: #fdfdfd;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .btn-submit { 
+            width: 100%; 
+            padding: 15px; 
+            background-color: #3498db; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: background 0.3s; 
+            margin-top: 10px;
+        }
+        .btn-submit:hover { 
+            background-color: #2980b9; 
+        }
+        .btn-back { 
+            display: block; 
+            text-align: center; 
+            margin-top: 20px; 
+            color: #7f8c8d; 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        .btn-back:hover {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Licencia por Reposo</h2>
+        
+        <form id="form-reposo">
+            <div class="form-group">
+                <label for="dni">DNI del Paciente</label>
+                <input type="number" id="dni" required placeholder="Ej: 35123456">
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" required placeholder="Nombre del trabajador">
+            </div>
+            
+            <div class="form-group">
+                <label for="diagnostico">Motivo de Reposo</label>
+                <select id="diagnostico" required>
+                    <option value="">Seleccione un cuadro...</option>
+                    <option value="Cuadro respiratorio superior">Cuadro respiratorio superior</option>
+                    <option value="Gastroenteritis aguda">Gastroenteritis aguda</option>
+                    <option value="Traumatismo leve">Traumatismo leve</option>
+                    <option value="Síndrome febril">Síndrome febril</option>
+                    <option value="Lumbalgia aguda">Lumbalgia aguda</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="dias">Días de Licencia Otorgados</label>
+                <input type="number" id="dias" required placeholder="Ej: 2" min="1" max="30">
+            </div>
+
+            <!-- Este botón es el que luego va a disparar el JavaScript -->
+            <button type="button" class="btn-submit" id="btn-generar">Generar Certificado Inviolable</button>
+            
+            <a href="index.html" class="btn-back">← Volver al menú principal</a>
+        </form>
+    </div>
+
+    <!-- Acá vamos a conectar nuestro archivo JavaScript después -->
+    <script src="app.js"></script>
+</body>
+</html>
