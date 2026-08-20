@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Médica - Certificados y Altas</title>
+    <style>
+        /* Estilos base incrustados para arrancar rápido */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .menu-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .btn-menu {
+            background-color: #ffffff;
+            border: 2px solid #e0e6ed;
+            border-radius: 15px;
+            width: 250px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        .btn-menu:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(52, 152, 219, 0.2);
+        }
+        .btn-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .btn-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- Acá luego pueden reemplazar el texto por el logo SVG de ustedes -->
+        <h1>Sistema de Gestión Médica</h1>
+        <p>Seleccione el documento a emitir</p>
+    </div>
+
+    <div class="menu-container">
+        <!-- Botón para Módulo 1 -->
+        <a href="reposo.html" class="btn-menu">
+            <span class="btn-icon">🛏️</span>
+            <span class="btn-text">Emitir Reposo</span>
+        </a>
+
+        <!-- Botón para Módulo 2 -->
+        <a href="alta.html" class="btn-menu">
+            <span class="btn-icon">🩺</span>
+            <span class="btn-text">Alta y Estudios</span>
+        </a>
+    </div>
+
+</body>
+</html>
