@@ -3,122 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emitir Reposo - Suite Médica</title>
+    <title>Suite Médica - Certificados y Altas</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #f4f7f6; 
-            display: flex; 
-            justify-content: center; 
-            padding: 40px 20px; 
-            margin: 0; 
+        /* Estilos base incrustados para arrancar rápido */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        .form-container { 
-            background: #ffffff; 
-            padding: 30px 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            width: 100%; 
-            max-width: 500px; 
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        h2 { 
-            color: #2c3e50; 
-            margin-top: 0; 
-            text-align: center; 
-            margin-bottom: 30px;
-        }
-        .form-group { 
-            margin-bottom: 20px; 
-        }
-        label { 
-            display: block; 
-            margin-bottom: 8px; 
-            font-weight: 600; 
-            color: #34495e; 
-        }
-        input, select { 
-            width: 100%; 
-            padding: 12px; 
-            border: 1px solid #bdc3c7; 
-            border-radius: 8px; 
-            font-size: 16px; 
-            box-sizing: border-box; 
-            background-color: #fdfdfd;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-        .btn-submit { 
-            width: 100%; 
-            padding: 15px; 
-            background-color: #3498db; 
-            color: white; 
-            border: none; 
-            border-radius: 8px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            transition: background 0.3s; 
-            margin-top: 10px;
-        }
-        .btn-submit:hover { 
-            background-color: #2980b9; 
-        }
-        .btn-back { 
-            display: block; 
-            text-align: center; 
-            margin-top: 20px; 
-            color: #7f8c8d; 
-            text-decoration: none; 
-            font-weight: 500;
-        }
-        .btn-back:hover {
+        .header h1 {
             color: #2c3e50;
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .menu-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .btn-menu {
+            background-color: #ffffff;
+            border: 2px solid #e0e6ed;
+            border-radius: 15px;
+            width: 250px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        .btn-menu:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(52, 152, 219, 0.2);
+        }
+        .btn-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .btn-text {
+            font-size: 20px;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Licencia por Reposo</h2>
-        
-        <form id="form-reposo">
-            <div class="form-group">
-                <label for="dni">DNI del Paciente</label>
-                <input type="number" id="dni" required placeholder="Ej: 35123456">
-            </div>
-            
-            <div class="form-group">
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" required placeholder="Nombre del trabajador">
-            </div>
-            
-            <div class="form-group">
-                <label for="diagnostico">Motivo de Reposo</label>
-                <select id="diagnostico" required>
-                    <option value="">Seleccione un cuadro...</option>
-                    <option value="Cuadro respiratorio superior">Cuadro respiratorio superior</option>
-                    <option value="Gastroenteritis aguda">Gastroenteritis aguda</option>
-                    <option value="Traumatismo leve">Traumatismo leve</option>
-                    <option value="Síndrome febril">Síndrome febril</option>
-                    <option value="Lumbalgia aguda">Lumbalgia aguda</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="dias">Días de Licencia Otorgados</label>
-                <input type="number" id="dias" required placeholder="Ej: 2" min="1" max="30">
-            </div>
-
-            <!-- Este botón es el que luego va a disparar el JavaScript -->
-            <button type="button" class="btn-submit" id="btn-generar">Generar Certificado Inviolable</button>
-            
-            <a href="index.html" class="btn-back">← Volver al menú principal</a>
-        </form>
+    <div class="header">
+        <!-- Acá luego pueden reemplazar el texto por el logo SVG de ustedes -->
+        <h1>Sistema de Gestión Médica</h1>
+        <p>Seleccione el documento a emitir</p>
     </div>
 
-    <!-- Acá vamos a conectar nuestro archivo JavaScript después -->
-    <script src="app.js"></script>
+    <div class="menu-container">
+        <!-- Botón para Módulo 1 -->
+        <a href="reposo.html" class="btn-menu">
+            <span class="btn-icon">🛏️</span>
+            <span class="btn-text">Emitir Reposo</span>
+        </a>
+
+        <!-- Botón para Módulo 2 -->
+        <a href="alta.html" class="btn-menu">
+            <span class="btn-icon">🩺</span>
+            <span class="btn-text">Alta y Estudios</span>
+        </a>
+    </div>
+
 </body>
 </html>
